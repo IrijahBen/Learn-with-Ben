@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\theme.config.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:theme.config.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\about.mdx||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\about.mdx||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\index.mdx||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\index.mdx||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\advanced.mdx||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:pages\\advanced.mdx||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.mdx",
+              "DocumentMoniker": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\index.mdx",
+              "RelativeDocumentMoniker": "pages\\index.mdx",
+              "ToolTip": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\index.mdx",
+              "RelativeToolTip": "pages\\index.mdx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQFSURBVDhPnVRLTKNVFP76pA/aUgIIWKClyACF8hxgmMUQmfBYQJhxYUwMAoG9rIlbSFjgRrcuXAAmw8sgkVfAKhQHEyDAQDJAKC1QeQdagvTlubf/VAwmRr/k5v73v\u002Bd\u002B55zvnHvxb6ivrzdfX19/4fF49mic0/h\u002BbGzspbD9d4RCIZHw\u002BQC9vb2xxcXFtVFRUR8pFIrHU1NT8Tc3N5KcnBxPVlbW7tnZmU0kEn3T1dW1PTExcSscg0SYI0hISFB2dnY\u002BaWxs/CQ6Ovrlzs7O48XFxUS1Si1VqVViIlIcHBzoExMTDRaLJTU5OVl9e3vr3draOmfnI4QlJSXyysrK1PLy8mft7e0fn56eNq6vr\u002Bc4HI5oiUSC0tJSGNNMCAaDOHIfSU9OTnV3d398YDab3yMopVKpz2q1XkRSphQzWltbGy4uLpr29vYs8/Pzkru7O2RnZeNZZSUUUQpQivDRP\u002BeBCyQByClycy0got8p0l80Gs1XkQhramo6KN3PJycnUwcHB8XWPKvo\u002BYfPkZ9fALlczm0YoVgshk6rA6WLGF0MFn9dxOrqqooiNKenp9eJuWUYmsPDQ/3S0pLEYskV5VmtSExKgkwm40RsMLCZSaBUKpGZmYmCggKSISQmnaNoO\u002BE\u002BoYTElVxeXoI0gXPfiX2nE/RP2P4L/oAfV1dXePNmA8FAkJxKcX5\u002BzjzK7hNySKUyGN43wOvxYnd3F9vbb3F8fIxAIMD3qQ/hcjlBVYXT5eKR6mP0fI/hASEzKCoqAlUcMqkEr5deY2VlGVQsUIPD4dgDyYKV1RUUFRah4slTpKWlCacpIGF\u002BAI1Wg4qKpzCZTEx0vBp8Bb/fD51OC5PRhNraOigVSq7nfUgHBgaG6MaE8vLy8qmRodfHQqUKG8rlMqSkpkAdrYbXe0M3K8grrtVqKc0YThAgDe9D3NDQ8EKlUr0g7\u002Blerxdu9xGVErD9bONRLS8vw2Aw4NGjTNAt4RoyPUdGR\u002BDxhr/9gr4MXMPx8XHMzMxgdnYWo6OjPDXWuGywdDc2NsCafG5ujjtwu93o7\u002B/nlXbsO6jCZ4iNjQ0RlS9SFEY6MjIirMKorq5GYWEhenp6eEHeNbjP5\u002BPFYz05MfEj6L4H6cqy/jqOEGZnZ4N0FFb/jJaWFtDLg\u002BnpaXR3d7OHBHV1dWhubj4pKyv7gUw\u002B/U\u002BECwsLPDpmOzQ0xKMmfe3Ur193dHR8SY/KbxHCuLg4xMfHC6swNjc3qYldqKqq4pGtra3xIhiNRthsNtD7CLvd/lNfX993pKmdZi8nTElJQQy1Ab0W3Jhpwyr7rpmbmpqgVquRRHebOWb6ZWRk8HtORFvDw8NveQQEEXlh1fnfaGtr\u002B4wi\u002Bza8Av4Edc23cI2jf0AAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-03-17T09:02:31.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "advanced.mdx",
+              "DocumentMoniker": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\advanced.mdx",
+              "RelativeDocumentMoniker": "pages\\advanced.mdx",
+              "ToolTip": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\advanced.mdx",
+              "RelativeToolTip": "pages\\advanced.mdx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQFSURBVDhPnVRLTKNVFP76pA/aUgIIWKClyACF8hxgmMUQmfBYQJhxYUwMAoG9rIlbSFjgRrcuXAAmw8sgkVfAKhQHEyDAQDJAKC1QeQdagvTlubf/VAwmRr/k5v73v\u002Bd\u002B55zvnHvxb6ivrzdfX19/4fF49mic0/h\u002BbGzspbD9d4RCIZHw\u002BQC9vb2xxcXFtVFRUR8pFIrHU1NT8Tc3N5KcnBxPVlbW7tnZmU0kEn3T1dW1PTExcSscg0SYI0hISFB2dnY\u002BaWxs/CQ6Ovrlzs7O48XFxUS1Si1VqVViIlIcHBzoExMTDRaLJTU5OVl9e3vr3draOmfnI4QlJSXyysrK1PLy8mft7e0fn56eNq6vr\u002Bc4HI5oiUSC0tJSGNNMCAaDOHIfSU9OTnV3d398YDab3yMopVKpz2q1XkRSphQzWltbGy4uLpr29vYs8/Pzkru7O2RnZeNZZSUUUQpQivDRP\u002BeBCyQByClycy0got8p0l80Gs1XkQhramo6KN3PJycnUwcHB8XWPKvo\u002BYfPkZ9fALlczm0YoVgshk6rA6WLGF0MFn9dxOrqqooiNKenp9eJuWUYmsPDQ/3S0pLEYskV5VmtSExKgkwm40RsMLCZSaBUKpGZmYmCggKSISQmnaNoO\u002BE\u002BoYTElVxeXoI0gXPfiX2nE/RP2P4L/oAfV1dXePNmA8FAkJxKcX5\u002BzjzK7hNySKUyGN43wOvxYnd3F9vbb3F8fIxAIMD3qQ/hcjlBVYXT5eKR6mP0fI/hASEzKCoqAlUcMqkEr5deY2VlGVQsUIPD4dgDyYKV1RUUFRah4slTpKWlCacpIGF\u002BAI1Wg4qKpzCZTEx0vBp8Bb/fD51OC5PRhNraOigVSq7nfUgHBgaG6MaE8vLy8qmRodfHQqUKG8rlMqSkpkAdrYbXe0M3K8grrtVqKc0YThAgDe9D3NDQ8EKlUr0g7\u002Blerxdu9xGVErD9bONRLS8vw2Aw4NGjTNAt4RoyPUdGR\u002BDxhr/9gr4MXMPx8XHMzMxgdnYWo6OjPDXWuGywdDc2NsCafG5ujjtwu93o7\u002B/nlXbsO6jCZ4iNjQ0RlS9SFEY6MjIirMKorq5GYWEhenp6eEHeNbjP5\u002BPFYz05MfEj6L4H6cqy/jqOEGZnZ4N0FFb/jJaWFtDLg\u002BnpaXR3d7OHBHV1dWhubj4pKyv7gUw\u002B/U\u002BECwsLPDpmOzQ0xKMmfe3Ur193dHR8SY/KbxHCuLg4xMfHC6swNjc3qYldqKqq4pGtra3xIhiNRthsNtD7CLvd/lNfX993pKmdZi8nTElJQQy1Ab0W3Jhpwyr7rpmbmpqgVquRRHebOWb6ZWRk8HtORFvDw8NveQQEEXlh1fnfaGtr\u002B4wi\u002Bza8Av4Edc23cI2jf0AAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-03-17T09:00:09.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "about.mdx",
+              "DocumentMoniker": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\about.mdx",
+              "RelativeDocumentMoniker": "pages\\about.mdx",
+              "ToolTip": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\pages\\about.mdx",
+              "RelativeToolTip": "pages\\about.mdx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQFSURBVDhPnVRLTKNVFP76pA/aUgIIWKClyACF8hxgmMUQmfBYQJhxYUwMAoG9rIlbSFjgRrcuXAAmw8sgkVfAKhQHEyDAQDJAKC1QeQdagvTlubf/VAwmRr/k5v73v\u002Bd\u002B55zvnHvxb6ivrzdfX19/4fF49mic0/h\u002BbGzspbD9d4RCIZHw\u002BQC9vb2xxcXFtVFRUR8pFIrHU1NT8Tc3N5KcnBxPVlbW7tnZmU0kEn3T1dW1PTExcSscg0SYI0hISFB2dnY\u002BaWxs/CQ6Ovrlzs7O48XFxUS1Si1VqVViIlIcHBzoExMTDRaLJTU5OVl9e3vr3draOmfnI4QlJSXyysrK1PLy8mft7e0fn56eNq6vr\u002Bc4HI5oiUSC0tJSGNNMCAaDOHIfSU9OTnV3d398YDab3yMopVKpz2q1XkRSphQzWltbGy4uLpr29vYs8/Pzkru7O2RnZeNZZSUUUQpQivDRP\u002BeBCyQByClycy0got8p0l80Gs1XkQhramo6KN3PJycnUwcHB8XWPKvo\u002BYfPkZ9fALlczm0YoVgshk6rA6WLGF0MFn9dxOrqqooiNKenp9eJuWUYmsPDQ/3S0pLEYskV5VmtSExKgkwm40RsMLCZSaBUKpGZmYmCggKSISQmnaNoO\u002BE\u002BoYTElVxeXoI0gXPfiX2nE/RP2P4L/oAfV1dXePNmA8FAkJxKcX5\u002BzjzK7hNySKUyGN43wOvxYnd3F9vbb3F8fIxAIMD3qQ/hcjlBVYXT5eKR6mP0fI/hASEzKCoqAlUcMqkEr5deY2VlGVQsUIPD4dgDyYKV1RUUFRah4slTpKWlCacpIGF\u002BAI1Wg4qKpzCZTEx0vBp8Bb/fD51OC5PRhNraOigVSq7nfUgHBgaG6MaE8vLy8qmRodfHQqUKG8rlMqSkpkAdrYbXe0M3K8grrtVqKc0YThAgDe9D3NDQ8EKlUr0g7\u002Blerxdu9xGVErD9bONRLS8vw2Aw4NGjTNAt4RoyPUdGR\u002BDxhr/9gr4MXMPx8XHMzMxgdnYWo6OjPDXWuGywdDc2NsCafG5ujjtwu93o7\u002B/nlXbsO6jCZ4iNjQ0RlS9SFEY6MjIirMKorq5GYWEhenp6eEHeNbjP5\u002BPFYz05MfEj6L4H6cqy/jqOEGZnZ4N0FFb/jJaWFtDLg\u002BnpaXR3d7OHBHV1dWhubj4pKyv7gUw\u002B/U\u002BECwsLPDpmOzQ0xKMmfe3Ur193dHR8SY/KbxHCuLg4xMfHC6swNjc3qYldqKqq4pGtra3xIhiNRthsNtD7CLvd/lNfX993pKmdZi8nTElJQQy1Ab0W3Jhpwyr7rpmbmpqgVquRRHebOWb6ZWRk8HtORFvDw8NveQQEEXlh1fnfaGtr\u002B4wi\u002Bza8Av4Edc23cI2jf0AAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-03-17T09:00:01.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "theme.config.tsx",
+              "DocumentMoniker": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\theme.config.tsx",
+              "RelativeDocumentMoniker": "theme.config.tsx",
+              "ToolTip": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\theme.config.tsx",
+              "RelativeToolTip": "theme.config.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-03-17T08:32:55.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\USER\\Downloads\\nextra-docs-template-main\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-17T08:31:27.204Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
