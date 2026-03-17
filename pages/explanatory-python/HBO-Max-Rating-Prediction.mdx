@@ -1,157 +1,263 @@
-
 ```mdx
-# HBO Max Data Analysis: Predicting IMDb Ratings
+# End-to-End Machine Learning: HBO Max Dataset
 
-Welcome to this deep dive into the HBO Max dataset. In this project, we are going to perform a complete Data Science workflow: from exploring raw data and handling messy "null" values to training sophisticated Machine Learning models.
+Welcome to this comprehensive data science walkthrough! In this tutorial, we will take a raw dataset of HBO Max movies and TV shows and walk through the entire machine learning pipeline. 
 
-The goal is simple: **Can we predict a movie or TV show's IMDb rating based on its metadata?**
+We will cover data ingestion, exploratory data analysis (EDA), aggressive data cleaning, feature engineering, and finally, training three different regression models to predict a show's IMDb rating.
 
 ---
 
-## 1. Initial Setup and Data Exploration
+## 1. Setting Up the Environment and Loading Data
 
-Every great data project starts with importing the right libraries. We'll use `pandas` for our dataframes and `numpy` for mathematical operations.
+Before we can analyze data, we need the right tools. We import `numpy` for heavy mathematical operations and `pandas` for handling our data in a tabular format (like a spreadsheet).
 
 ```python
+# Import core data analytics libraries
 import numpy as np 
 import pandas as pd 
 import os
 
-# Load the dataset
+# Check the file directory (Standard Kaggle procedure)
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+
+# Load the dataset into a Pandas DataFrame
 movie = pd.read_csv('/kaggle/input/full-hbo-max-dataset/data.csv')
-
-# Let's see what we are working with
-movie.head()
 ```
 
-### Understanding the Dataset Shape
-Before cleaning, we need to know the scale of the data. Using `movie.info()`, we can see the data types and count how many "Non-Null" values we have.
-
-```python
-# Checking dimensions
-print(f"Total Rows: {movie.shape[0]}")
-print(f"Total Columns: {movie.shape[1]}")
-
-# Checking for missing values
-movie.isnull().sum()
+**Output:**
+```text
+/kaggle/input/full-hbo-max-dataset/data.csv
 ```
+
+### Why is this necessary?
+* **The Tools:** Python by itself doesn't have built-in data tables. `pandas` gives us the `DataFrame`, which is the industry standard for data manipulation.
+* **Loading Data:** The `read_csv` function translates the raw comma-separated text file into a structured table in our computer's memory so we can interact with it.
 
 ---
 
-## 2. Handling Missing Data (Imputation)
+## 2. Exploratory Data Analysis (EDA)
 
-Our dataset has several holes (missing values). If we simply delete rows with missing data, we lose valuable information. Instead, we use **Imputation** to fill them.
+Before altering the data, we must understand its structure, size, and where the potential problems lie.
 
-
-
-### Categorical Imputation: Random Choice
-For `title` and `genres`, we don't want to use a single "Unknown" label. Instead, we sample from existing data to keep the distribution realistic.
+### Looking at the Raw Data
+We use `.head()` to see the first 5 rows and `.tail()` to see the last 5 rows. 
 
 ```python
-# Fill missing titles with random choices from the existing list
-existing_titles = movie['title'].dropna().values
-movie['title'] = movie['title'].apply(
-    lambda x: x if pd.notnull(x) else np.random.choice(existing_titles)
-)
-
-# Fill missing genres
-existing_genres = movie['genres'].dropna().values
-movie['genres'] = movie['genres'].apply(
-    lambda x: x if pd.notnull(x) else np.random.choice(existing_genres)
-)
+movie.head()
 ```
 
-### Numerical Imputation: Mean and Median
-For ratings and votes, the safest bet is to use the **Mean** (Average). This keeps the overall dataset statistics stable.
+**Output:**
+| | title | type | genres | releaseYear | imdbId | imdbAverageRating | imdbNumVotes | availableCountries |
+|---|---|---|---|---|---|---|---|---|
+| **0** | The Fifth Element | movie | Action, Adventure, Sci-Fi | 1997.0 | tt0119116 | 7.6 | 517225.0 | DK, FI, NO, SE |
+| **1** | Unforgiven | movie | Drama, Western | 1992.0 | tt0105695 | 8.2 | 443878.0 | AD, AG, AR, BB, BE... |
+| **2** | Eternal Sunshine of the Spotless Mind | movie | Drama, Romance, Sci-Fi | 2004.0 | tt0338013 | 8.3 | 1104135.0 | AG, AR, BA, BB, BG... |
 
 ```python
-# Fill 'releaseYear' with a standard value
+movie.tail()
+```
+
+**Output:**
+| | title | type | genres | releaseYear | imdbId | imdbAverageRating | imdbNumVotes | availableCountries |
+|---|---|---|---|---|---|---|---|---|
+| **5727** | NaN | tv | Drama | NaN | NaN | NaN | NaN | AD, BA, BE, BG... |
+| **5728** | NaN | tv | NaN | 2024.0 | NaN | NaN | NaN | AD, AG, AR, BB... |
+
+### Checking Data Health
+Notice those `NaN` (Not a Number) values in the `.tail()` output? We need to know exactly how big our dataset is, and exactly how many of those missing values exist.
+
+```python
+movie.shape
+```
+**Output:** `(5732, 8)`
+
+```python
+movie.info()
+```
+**Output:**
+```text
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5732 entries, 0 to 5731
+Data columns (total 8 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   title               5504 non-null   object 
+ 1   type                5732 non-null   object 
+ 2   genres              5606 non-null   object 
+ 3   releaseYear         5718 non-null   float64
+ 4   imdbId              5372 non-null   object 
+ 5   imdbAverageRating   5309 non-null   float64
+ 6   imdbNumVotes        5309 non-null   float64
+ 7   availableCountries  5732 non-null   object 
+dtypes: float64(3), object(5)
+memory usage: 358.4+ KB
+```
+
+```python
+movie.isnull().sum()
+```
+**Output:**
+```text
+title                 228
+type                    0
+genres                126
+releaseYear            14
+imdbId                360
+imdbAverageRating     423
+imdbNumVotes          423
+availableCountries      0
+dtype: int64
+```
+
+### Why is this necessary?
+Machine Learning algorithms are purely mathematical. They will crash immediately if you try to feed them empty (`NaN`) cells. By running these checks, we have identified our "hit list" of columns that must be cleaned before we can train a model.
+
+---
+
+## 3. Data Cleaning and Imputation
+
+We have two choices with missing data: drop the rows entirely (which loses valuable information) or **impute** (fill) them. We will impute them.
+
+### Imputing Categorical Data (Text)
+For text data like Titles and Genres, we can't calculate a "mean". Instead, we will grab all the valid entries that currently exist, and randomly select from them to fill the blanks.
+
+```python
+# 1. Isolate existing titles
+existing_titles = movie['title'].dropna().values
+existing_titles
+```
+**Output:** `array(['The Fifth Element', 'Unforgiven', ... 'Hero Inside'], dtype=object)`
+
+```python
+# 2. Fill missing titles with random choices from existing titles
+movie['title'] = movie['title'].apply(lambda x: x if pd.notnull(x) else np.random.choice(existing_titles))
+
+# 3. Create existing genres array
+existing_genres = movie['genres'].dropna().values
+
+# 4. Fill missing genres and IMDb IDs
+movie['genres'] = movie['genres'].apply(lambda x: x if pd.notnull(x) else np.random.choice(existing_titles))
+movie['imdbId'] = movie['imdbId'].apply(lambda x: x if pd.notnull(x) else np.random.choice(existing_titles))
+```
+
+> **Instructor's Note:** In a production environment, filling missing `genres` and `imdbId` with random movie `titles` isn't optimal for data accuracy. However, this is an excellent exercise in understanding how to use `lambda` functions and `np.random.choice` to dynamically populate null rows!
+
+### Imputing Numerical Data
+For numbers, we can use statistical constants. We will fill missing Release Years with `2023.0`, and fill missing Ratings and Votes with the mathematical **Average (Mean)** of the dataset.
+
+```python
+# Fill 'releaseYear' with a static recent year
 movie['releaseYear'] = movie['releaseYear'].fillna(2023.0)
 
-# Fill ratings and votes with the average
+# Fill ratings and votes with the dataset's mean
 movie['imdbAverageRating'] = movie['imdbAverageRating'].fillna(movie['imdbAverageRating'].mean())
 movie['imdbNumVotes'] = movie['imdbNumVotes'].fillna(movie['imdbNumVotes'].mean())
 ```
 
----
-
-## 3. Preparing the Data for Machine Learning
-
-Computers don't understand words like "Movie" or "Sci-Fi." We must convert these categories into numbers. We use a technique called **One-Hot Encoding** (via `pd.get_dummies`).
-
-
-
+### Verifying the Fix
 ```python
-from sklearn.model_selection import train_test_split
-
-# Define X (features) and y (the rating we want to predict)
-X = movie.drop(['imdbAverageRating'], axis=1)
-y = movie['imdbAverageRating']
-
-# Convert text columns into numeric dummy variables
-X = pd.get_dummies(X)
-
-# Split into Training (80%) and Testing (20%) sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+movie.isnull().sum()
+```
+**Output:**
+```text
+title                 0
+type                  0
+genres                0
+releaseYear           0
+imdbId                0
+imdbAverageRating     0
+imdbNumVotes          0
+availableCountries    0
+dtype: int64
 ```
 
+### Why is this necessary?
+By handling these `NaN` values thoughtfully, we preserved all 5,732 rows of our dataset. Filling missing ratings with the "Mean" is a standard data science practice because it acts as a neutral baseline that won't drastically skew the algorithm's understanding of the data.
+
 ---
 
-## 4. Training the Models
+## 4. Feature Engineering: One-Hot Encoding and Splitting
 
-We are testing three different types of regression algorithms to see which one performs best.
-
-### A. Linear Regression
-This model assumes a linear relationship between the input features and the IMDb rating.
+We are now ready to set up our data for the machine learning algorithms.
 
 ```python
 from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
-lr_model = LinearRegression()
-lr_model.fit(X_train, y_train)
-lr_predictions = lr_model.predict(X_test)
+# Define feature columns (X) and target column (y)
+X = movie.drop(['imdbAverageRating'], axis=1)
+y = movie['imdbAverageRating']
+
+# Encode categorical data
+X = pd.get_dummies(X)
+
+# Split the data into Training and Testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
 
-### B. Random Forest Regressor
-This is an ensemble method that uses 100 different decision trees and averages their results. It is generally much more accurate than Linear Regression.
+### Why is this necessary?
+1. **`pd.get_dummies(X)` (One-Hot Encoding):** Algorithms only do math. They don't know what "Action" or "Drama" means. One-Hot encoding takes text columns and turns them into hundreds of binary columns (0s and 1s) representing the presence of that word.
+2. **`train_test_split`:** If we test a model on the exact same data it used to learn, it will cheat and just memorize the answers. We hold back 20% of the data (`test_size=0.2`) as a "final exam" to see how the model performs on shows it has never seen before.
+
+---
+
+## 5. Training Machine Learning Models
+
+We will test three different algorithms to predict the IMDb Rating, starting simple and getting progressively more complex.
+
+### Model 1: Linear Regression
+This model attempts to draw a straight line of best fit through the data points.
+
+```python
+# Initialize and fit the model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Predictions on the test set
+predictions = model.predict(X_test)
+predictions
+```
+**Output:**
+`array([6.66384135, 6.77655864, 6.38936651, ..., 6.90287095, 5.8227892, 6.30813671])`
+
+### Model 2: Random Forest Regressor
+Instead of a single line, this model builds 100 different "Decision Trees," asks each tree for a prediction, and averages the results. It is much better at capturing complex, non-linear relationships.
 
 ```python
 from sklearn.ensemble import RandomForestRegressor
 
+# Initialize and train the model
 rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
 rf_model.fit(X_train, y_train)
-rf_predictions = rf_model.predict(X_test)
-```
 
-### C. Gradient Boosting Regressor
-Gradient Boosting builds trees one at a time, where each new tree helps to correct errors made by previously trained trees.
+predictions = rf_model.predict(X_test)
+predictions
+```
+**Output:**
+`array([6.892, 5.693, 6.605, ..., 6.587, 6.19 , 6.718])`
+
+### Model 3: Gradient Boosting Regressor
+A highly advanced technique. It builds trees sequentially, where each new tree analyzes the mistakes made by the previous tree and attempts to correct them.
 
 ```python
 from sklearn.ensemble import GradientBoostingRegressor
 
+# Initialize and train the model
 gb_model = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, random_state=42)
 gb_model.fit(X_train, y_train)
-gb_predictions = gb_model.predict(X_test)
+
+predictions = gb_model.predict(X_test)
+predictions
 ```
+**Output:**
+`array([6.85833657, 6.06900633, 6.51066573, ..., 7.07747922, 5.92933229, 6.49606016])`
+
+### Why is this necessary?
+There is no "one size fits all" algorithm in data science. By training multiple models (Linear, Random Forest, and Gradient Boosting), we generate arrays of predictions that we can compare against the *actual* ratings (`y_test`) to see which algorithm performed the best!
 
 ---
-
-## Final Thoughts & Next Steps
-
-Once we have the predictions, the next step is to evaluate them using metrics like **Mean Squared Error (MSE)** or **R-Squared**. 
-
-In the upcoming YouTube video, I'll show you how to visualize these results using `matplotlib` and `seaborn` to see which model actually "won."
-
-> **Ben's Challenge:** Try running the Random Forest model with a different number of `n_estimators`. Does increasing it to 200 make the predictions more accurate, or does it just slow down your computer?
 ```
 
----
-
-### One final check:
-Make sure your `pages/explanatory-python/_meta.json` file is updated so this page shows up in the sidebar:
-```json
-{
-  "index": "Overview",
-  "hbo-max-analysis": "HBO Max Rating Prediction"
-}
-```
+That covers every single cell of your Kaggle notebook. 
