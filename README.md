@@ -1,24 +1,61 @@
-# Nextra Docs Template 
+🚀 Learn With Ben
+Welcome to the central hub for Learn With Ben! This is a documentation-driven learning platform built with Nextra and Next.js, designed to be the ultimate companion for my upcoming YouTube data science series.
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+📖 About the Project
+This repository hosts the source code and detailed explanations for every tutorial featured on the Learn With Ben YouTube channel. It is specifically crafted for:
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+Python for Data Analytics: Clean, reproducible code for real-world datasets.
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+Machine Learning Explanations: Deep dives into predictive modeling (e.g., our HBO Max rating analysis).
 
-## Quick Start
+SQL & Database Projects: Practical walkthroughs for PostgreSQL and data engineering.
 
-Click the button to clone this repository and deploy it on Vercel:
+🛠️ Tech Stack
+Framework: Nextra v2 (Next.js)
 
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
+Styling: Tailwind CSS
 
-## Local Development
+Language: MDX (Markdown + React Components)
 
-First, run `pnpm i` to install the dependencies.
+Package Manager: pnpm
 
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
+💻 Local Development
+To run this documentation site on your own machine:
 
-## License
+Clone the repository:
 
+Bash
+git clone https://github.com/IrijahBen/Learn-with-Ben.git
+cd Learn-with-Ben
+Install dependencies:
+
+Bash
+pnpm install
+Start the development server:
+
+Bash
+pnpm dev
+Visit http://localhost:3000 to see the live site.
+
+📺 Coming Soon to YouTube
+Stay tuned for the official launch of the video series! Each folder in this repo corresponds to a specific video tutorial, making it easy to follow along with the code while you watch.
+
+Connect With Me
+LinkedIn: Ajiboye Abayomi
+
+Twitter/X: @ABAYOMIAJIBOYE1
+
+Medium: Read my articles here
+
+📄 License
 This project is licensed under the MIT License.
-# Learn-with-Ben
+
+What’s next?
+Now that your README is clean, you are ready for a final push!
+
+Run these commands in your terminal to sync the new README to GitHub:
+
+Bash
+git add README.md
+git commit -m "docs: update README with Learn With Ben branding"
+git push origin main
